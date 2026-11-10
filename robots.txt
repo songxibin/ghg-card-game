@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+Sitemap: https://ghg-carbon-game.pages.dev/sitemap.xml

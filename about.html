@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 · 碳世界 GHG 闯关实验室</title>
+  <meta name="description" content="碳世界是一个免费的温室气体科普项目：用互动游戏和知识库，让更多人理解 GHG、碳足迹与净零。">
+  <meta property="og:url" content="https://ghg-carbon-game.pages.dev/about.html">
+  <meta name="theme-color" content="#061712">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script defer src="assets/js/ads.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span>碳世界</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="play.html">闯关</a>
+        <a href="learn.html">知识库</a>
+        <a href="about.html" class="active">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+      <section class="section-head">
+        <div class="eyebrow"><span class="dot"></span>关于</div>
+        <h1 class="page-title">为什么做这个<em>小游戏</em></h1>
+        <p class="lede">
+          大多数人听说过“碳中和”，却说不清 CO₂e 是什么、范围一和范围二有什么区别。
+          我们希望用一个 5 分钟、不用安装、没有门槛的网页，把这些概念变成可以亲手操作的取舍。
+        </p>
+      </section>
+
+      <div class="grid grid-2" style="margin-bottom:24px">
+        <div class="panel">
+          <h2 style="font-size:20px;margin-bottom:10px">我们相信</h2>
+          <p class="muted" style="font-size:14px;line-height:1.8">
+            理解胜于说教。当一个人亲手做过“预算有限、目标明确、每个选择都有代价”的决策，
+            他对碳管理的理解会比读十篇文章更牢。减排不是道德口号，而是一道需要算清楚账的工程题。
+          </p>
+        </div>
+        <div class="panel">
+          <h2 style="font-size:20px;margin-bottom:10px">你会玩到什么</h2>
+          <p class="muted" style="font-size:14px;line-height:1.8">
+            四个关卡：概念测验 → 家庭碳账本 → 工厂减排账 → 城市十年。
+            每关都有排放、预算、支持度三个指标，选择会真实改变数值，通关后才能解锁下一关。
+          </p>
+        </div>
+      </div>
+
+      <section class="panel" style="margin-bottom:24px">
+        <h2 style="font-size:20px;margin-bottom:10px">内容与数据说明</h2>
+        <ul class="muted" style="font-size:14px;line-height:1.9;padding-left:18px">
+          <li>游戏数值为科普示意，来源于公开的排放因子与政策案例的量级，<b>不是真实企业的碳盘查结果</b>。</li>
+          <li>知识库内容参考 US EPA、GHG Protocol、IPCC 等公开资料；正式核算请遵循 ISO 14064 / GHG Protocol。</li>
+          <li>网站不要求注册，不收集姓名、邮箱或位置；游戏进度只保存在你浏览器本地的 localStorage 中。</li>
+          <li>网站通过 Cloudflare Pages 托管；启用广告后，Google 可能使用 Cookie 展示个性化广告，详见<a href="privacy.html">隐私政策</a>。</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2 style="font-size:20px;margin-bottom:10px">联系我们</h2>
+        <p class="muted" style="font-size:14px;line-height:1.8;margin-bottom:10px">
+          发现事实错误、想合作做校园科普、或者希望把内容翻译成其他语言，都欢迎写信给我们。
+        </p>
+        <p style="font-size:14px">
+          邮箱：<a id="contact-email" href="mailto:contact@example.com">contact@example.com</a>
+        </p>
+        <p class="small muted" style="margin-top:10px">我们通常会在几个工作日内回复。</p>
+      </section>
+
+      <div class="ad-slot" data-ad-slot="leaderboard" aria-hidden="true">广告位 · Advertisement</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© 2026 碳世界 · GHG 闯关实验室。科普用途，数值为示意性简化。</div>
+      <nav aria-label="页脚导航">
+        <a href="index.html">首页</a>
+        <a href="play.html">闯关</a>
+        <a href="learn.html">知识库</a>
+        <a href="privacy.html">隐私政策</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var config = window.SITE_CONFIG || {};
+      var email = config.contactEmail;
+      var link = document.getElementById('contact-email');
+      if (link && email) {
+        link.textContent = email;
+        link.setAttribute('href', 'mailto:' + email);
+      }
+    })();
+  </script>
+</body>
+</html>

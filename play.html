@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闯关 · 碳世界 GHG 闯关实验室</title>
+  <meta name="description" content="4 个由浅入深的温室气体减排关卡：概念测验、家庭碳账本、工厂减排账、城市十年。有限预算，多重目标，看你怎么通关。">
+  <meta property="og:title" content="闯关 · 碳世界 GHG 闯关实验室">
+  <meta property="og:description" content="从概念到城市政策，4 个关卡、18+ 个真实减排决策。">
+  <meta property="og:url" content="https://ghg-carbon-game.pages.dev/play.html">
+  <meta name="theme-color" content="#061712">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script defer src="assets/js/ads.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span>碳世界</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="play.html" class="active">闯关</a>
+        <a href="learn.html">知识库</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <!-- ================= 关卡地图 ================= -->
+      <section id="screen-map" class="screen active">
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span>闯关模式</div>
+          <h1 class="page-title">选择你的<em>关卡</em></h1>
+          <p class="lede">通过上一关才会解锁下一关。每关最多 3 颗星，进度保存在本机浏览器。</p>
+        </div>
+        <div id="map-summary" style="margin-bottom:22px"></div>
+        <div class="level-map" id="map-levels"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+          <button class="btn btn-ghost btn-sm keep" data-open-glossary>📖 名词解释</button>
+          <button class="btn btn-ghost btn-sm keep" id="btn-reset-progress">清空本机进度</button>
+          <a class="btn btn-ghost btn-sm keep" href="learn.html">去知识库补课</a>
+        </div>
+        <div class="ad-slot" data-ad-slot="inline" aria-hidden="true">广告位 · Advertisement</div>
+        <p class="small muted" style="margin-top:4px">提示：没有“标准答案”，不同取舍都能通关。关键是看懂每个选择背后的排放账。</p>
+      </section>
+
+      <!-- ================= 测验 ================= -->
+      <section id="screen-quiz" class="screen">
+        <div class="quiz-panel" id="quiz-root"></div>
+        <div style="text-align:center;margin-top:24px">
+          <button class="btn btn-ghost btn-sm" id="quiz-back" onclick="window.location.hash='';window.location.reload()">← 返回关卡地图</button>
+        </div>
+      </section>
+
+      <!-- ================= 模拟 ================= -->
+      <section id="screen-game" class="screen">
+        <div class="hud">
+          <div class="hud-cell">
+            <div class="hud-label">年排放量</div>
+            <div class="hud-value" id="hud-emissions">—</div>
+            <div class="meter meter-em"><i id="bar-emissions" style="width:100%"></i></div>
+          </div>
+          <div class="hud-cell">
+            <div class="hud-label">可用预算</div>
+            <div class="hud-value" id="hud-budget">—</div>
+            <div class="meter meter-bd"><i id="bar-budget" style="width:100%"></i></div>
+          </div>
+          <div class="hud-cell">
+            <div class="hud-label">公众支持度</div>
+            <div class="hud-value" id="hud-support">—</div>
+            <div class="meter meter-sp"><i id="bar-support" style="width:50%"></i></div>
+          </div>
+          <div class="hud-cell">
+            <div class="hud-label">进度</div>
+            <div class="hud-value" id="hud-year">—</div>
+            <div class="meter meter-yr"><i id="bar-year" style="width:0%"></i></div>
+          </div>
+        </div>
+
+        <div class="round-head">
+          <h2 id="round-title">正在载入…</h2>
+          <div class="hint" id="round-hint"></div>
+        </div>
+        <div class="cards" id="cards"></div>
+        <div id="feedback" aria-live="polite"></div>
+        <p class="footer" id="game-goal"></p>
+        <div style="display:flex;justify-content:center;margin-top:20px">
+          <button class="btn btn-ghost btn-sm" data-action="to-map" onclick="window.location.hash='';window.location.reload()">← 放弃并返回地图</button>
+        </div>
+      </section>
+
+      <!-- ================= 结算 ================= -->
+      <section id="screen-result" class="screen">
+        <div id="result-root"></div>
+        <div class="ad-slot" data-ad-slot="inline" aria-hidden="true">广告位 · Advertisement</div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© 2026 碳世界 · GHG 闯关实验室。科普用途，数值为示意性简化。</div>
+      <nav aria-label="页脚导航">
+        <a href="index.html">首页</a>
+        <a href="learn.html">知识库</a>
+        <a href="about.html">关于</a>
+        <a href="privacy.html">隐私政策</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- 名词解释 -->
+  <div class="modal" id="glossary-modal" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-box">
+      <h2 id="glossary-title">GHG 名词解释</h2>
+      <p class="sub">看懂这 6 个词，你就入门了温室气体管理。</p>
+      <div class="glossary" id="glossary-list"></div>
+      <button class="btn btn-primary btn-block" id="btn-glossary-close" style="margin-top:18px">知道了</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/engine.js"></script>
+</body>
+</html>

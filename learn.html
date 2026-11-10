@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHG 知识库 · 温室气体、碳足迹与净零入门</title>
+  <meta name="description" content="用大白话讲清温室气体（GHG）、CO₂e、Scope 1/2/3、碳足迹核算、碳中和与碳市场。适合刚接触碳管理的学生、职场新人和好奇的普通人。">
+  <meta property="og:title" content="GHG 知识库 · 碳世界">
+  <meta property="og:description" content="6 个章节，把温室气体、碳足迹与净零讲清楚。">
+  <meta property="og:url" content="https://ghg-carbon-game.pages.dev/learn.html">
+  <meta name="theme-color" content="#061712">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script defer src="assets/js/ads.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span>碳世界</a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="play.html">闯关</a>
+        <a href="learn.html" class="active">知识库</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+      <section class="section-head">
+        <div class="eyebrow"><span class="dot"></span>知识库 · 约 6 分钟读完</div>
+        <h1 class="page-title">把 <em>GHG</em> 讲成人话</h1>
+        <p class="lede">
+          不堆术语，不讲空话。下面六节覆盖游戏里出现的全部概念，
+          读完你会知道碳账本怎么记、企业为什么被逼着减排、以及“碳中和”到底是什么意思。
+        </p>
+      </section>
+
+      <div class="ad-slot" data-ad-slot="leaderboard" aria-hidden="true">广告位 · Advertisement</div>
+
+      <div class="knowledge">
+
+        <details class="acc" id="ghg" open>
+          <summary>1. 温室气体（GHG）到底是什么？</summary>
+          <div class="body">
+            <p>温室气体（Greenhouse Gas，缩写 GHG）是能吸收并重新辐射热量的气体。它们像一层“棉被”罩在地球外面：太阳光进来容易，热量出去难，于是地表越来越暖。</p>
+            <p><b>《京都议定书》和 IPCC 关注的主要温室气体有七种：</b></p>
+            <ul>
+              <li><b>CO₂</b> 二氧化碳——化石燃料燃烧的主要产物，排放量最大。</li>
+              <li><b>CH₄</b> 甲烷——来自稻田、反刍动物、垃圾填埋和天然气泄漏，增温能力约为 CO₂ 的 28 倍。</li>
+              <li><b>N₂O</b> 氧化亚氮——主要来自化肥和农业，约为 CO₂ 的 265 倍。</li>
+              <li><b>HFCs、PFCs</b> 含氟气体——制冷剂和工业过程，增温能力可达数千倍。</li>
+              <li><b>SF₆</b> 六氟化硫——电力设备绝缘气体，约为 CO₂ 的 23,500 倍。</li>
+              <li><b>NF₃</b> 三氟化氮——电子行业清洗气体。</li>
+            </ul>
+            <p>为了把不同气体放在同一张账上比较，人们用 <b>GWP（全球增温潜势）</b> 把它们折算成二氧化碳当量，也就是 <b>CO₂e</b>。所以“排放 1 吨 CO₂e”并不一定真的是 1 吨二氧化碳，而是一个统一的可比单位。</p>
+            <p class="note"><b>记住这个换算：</b>1 吨甲烷 ≈ 28 吨 CO₂e；1 吨氧化亚氮 ≈ 265 吨 CO₂e；1 吨 SF₆ ≈ 23,500 吨 CO₂e。</p>
+          </div>
+        </details>
+
+        <details class="acc" id="scopes" open>
+          <summary>2. Scope 1 / 2 / 3：企业排放怎么分？</summary>
+          <div class="body">
+            <p>GHG Protocol（温室气体核算体系）把一家企业的排放分成三个“范围”，这是全球最通用的分类方式：</p>
+            <ul>
+              <li><b>范围一（Scope 1）——直接排放。</b>企业自己拥有或控制的来源，比如锅炉烧天然气、厂区车辆烧柴油、空调制冷剂泄漏。</li>
+              <li><b>范围二（Scope 2）——外购能源的间接排放。</b>企业买了电、蒸汽、热力，发电厂在别处烧煤产生的排放，算在用电企业头上。</li>
+              <li><b>范围三（Scope 3）——价值链间接排放。</b>供应链采购、物流运输、员工通勤、商务差旅、产品使用和废弃……这些不在企业围墙内，却真实发生。</li>
+            </ul>
+            <p>很多行业里，<b>范围三占总排放的 70% 以上</b>。这也是为什么“只改造自己工厂”往往不够——真正的减排要拉着供应商和客户一起做。</p>
+            <p class="note"><b>游戏对应：</b>第 3 关“工厂的减排账”里，绿电属于范围二，余热回收属于范围一，供应商准入和空运改海运属于范围三。</p>
+          </div>
+        </details>
+
+        <details class="acc" id="footprint">
+          <summary>3. 碳足迹是怎么算出来的？</summary>
+          <div class="body">
+            <p>碳足迹的本质是一个乘法：<b>活动数据 × 排放因子 = 排放量</b>。</p>
+            <ul>
+              <li><b>活动数据</b>：你用了多少度电、烧了多少升柴油、飞了多少公里、买了多少吨钢。</li>
+              <li><b>排放因子</b>：每单位活动对应的排放量，比如电网平均排放因子约 0.5–0.6 kgCO₂e/kWh，柴油约 2.6 kgCO₂e/L。</li>
+            </ul>
+            <p>把每一项乘出来再加总，就得到以 tCO₂e（吨二氧化碳当量）为单位的碳足迹。个人、家庭、企业、城市，用的都是同一套逻辑，只是边界不同。</p>
+            <p>难点通常不在乘法，而在<b>边界</b>：哪些算进来、哪些不算？数据从哪来？排放因子用哪一版？这也是碳盘查容易被“做手脚”的地方——边界一变，数字就能好看很多。</p>
+          </div>
+        </details>
+
+        <details class="acc" id="netzero">
+          <summary>4. 碳中和、净零与“漂绿”</summary>
+          <div class="body">
+            <p>“碳中和”常被误解成“不排放”。更准确的说法是：<b>先尽可能减少真实排放，再用碳汇或碳移除抵消剩下的净排放</b>，使净排放为零。</p>
+            <p>顺序很重要。如果一家公司不改造设备、不换能源，只买一堆便宜碳信用就宣布“已中和”，这就是典型的 <b>“漂绿”（greenwashing）</b>。</p>
+            <ul>
+              <li><b>碳汇</b>：森林、湿地、土壤等吸收并储存碳的系统。</li>
+              <li><b>碳移除</b>：直接空气捕集、CCUS、增强风化等技术手段。</li>
+              <li><b>优质抵消</b>需要满足额外性（不买就不会发生）、永久性（不会几年后又排回去）、可核查（有第三方数据）。</li>
+            </ul>
+            <p>对个人也一样：少开一次车、少浪费一餐饭，比买几块钱的“碳中和标签”更实在。</p>
+          </div>
+        </details>
+
+        <details class="acc" id="carbon-price">
+          <summary>5. 碳价、碳市场与 CBAM</summary>
+          <div class="body">
+            <p>减排需要钱，也需要动力。<b>碳价</b>就是给“每吨 CO₂e”标一个价格，让排放变成一项成本。</p>
+            <ul>
+              <li><b>碳税</b>：政府直接定价，排一吨交一吨的钱。</li>
+              <li><b>碳排放权交易（ETS）</b>：政府发放配额，企业之间买卖。减排成本低的企业多减、卖配额；成本高的企业买配额。</li>
+              <li><b>CBAM（欧盟碳边境调节机制）</b>：对进口的高碳产品征收碳成本，防止“碳泄漏”——把高碳生产搬到监管更松的地方。</li>
+            </ul>
+            <p>碳价会改变每一个选择：煤电变贵、绿电变便宜、节能改造回本更快。但碳价设计也有难点：配额发得太松，价格就失效；涨得太快，又可能推高生活成本。所以很多方案会把收入返还给居民。</p>
+          </div>
+        </details>
+
+        <details class="acc" id="mistakes">
+          <summary>6. 六个常见误区</summary>
+          <div class="body">
+            <ul>
+              <li><b>“碳中和 = 零排放”。</b>错。净零允许抵消剩余排放，但前提是真实减排做到位。</li>
+              <li><b>“植树就能抵消一切”。</b>错。森林会受火灾、病虫害影响，碳汇有永久性风险，不能替代减排。</li>
+              <li><b>“范围三不归我管”。</b>错。供应链排放是很多企业的大头，客户和监管都在看。</li>
+              <li><b>“电动车一定更环保”。</b>不一定。要看电网清洁度、电池生产和全生命周期。</li>
+              <li><b>“本地食物一定低碳”。</b>不一定。生产方式（是否温室、是否大量用化肥）往往比运输距离更关键。</li>
+              <li><b>“碳信用越便宜越划算”。</b>便宜往往意味着质量存疑，可能减不了多少碳，还带来声誉风险。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="ad-slot" data-ad-slot="inline" aria-hidden="true">广告位 · Advertisement</div>
+
+      <section style="margin-top:44px">
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span>速查</div>
+          <h2 class="page-title" style="font-size:clamp(24px,3.4vw,32px)">名词小抄</h2>
+        </div>
+        <dl class="glossary">
+          <div class="gloss"><dt>GHG</dt><dd>温室气体，主要包括 CO₂、CH₄、N₂O、HFCs、PFCs、SF₆、NF₃。</dd></div>
+          <div class="gloss"><dt>CO₂e</dt><dd>按 GWP 折算后的二氧化碳当量，统一计量单位。</dd></div>
+          <div class="gloss"><dt>GWP</dt><dd>全球增温潜势，衡量单位质量气体的增温能力。</dd></div>
+          <div class="gloss"><dt>范围一 / 二 / 三</dt><dd>直接排放 / 外购能源间接排放 / 价值链间接排放。</dd></div>
+          <div class="gloss"><dt>排放因子</dt><dd>每单位活动数据对应的排放量，如 kgCO₂e/kWh。</dd></div>
+          <div class="gloss"><dt>基准年</dt><dd>减排目标的对比起点，如“较 2020 年下降 50%”。</dd></div>
+          <div class="gloss"><dt>净零（Net Zero）</dt><dd>真实减排后，用碳汇或碳移除抵消剩余排放。</dd></div>
+          <div class="gloss"><dt>漂绿</dt><dd>用营销或低质量抵消制造“环保”形象，实际减排不足。</dd></div>
+        </dl>
+      </section>
+
+      <section style="margin-top:44px">
+        <div class="panel">
+          <h2 style="font-size:20px;margin-bottom:10px">想动手试试？</h2>
+          <p class="muted" style="font-size:14px;line-height:1.75;margin-bottom:18px">
+            知识看懂了，不代表会做取舍。回到游戏，用有限预算把排放降下来——
+            第 4 关的城市十年，会同时考验你的减排判断、财政约束和民意管理。
+          </p>
+          <a class="btn btn-primary" href="play.html">去闯关 →</a>
+        </div>
+      </section>
+
+      <section style="margin-top:36px">
+        <p class="small muted" style="line-height:1.9">
+          <b>资料来源与说明：</b>内容参考 US EPA（Scope 1/2/3 指南、温室气体等价换算器）、GHG Protocol 核算体系、IPCC 评估报告中的 GWP 量级，以及公开的碳市场资料。
+          文中数值为便于理解的近似值，不构成碳核算、投资或政策建议；正式的碳盘查请遵循 ISO 14064 / GHG Protocol 并由专业机构核查。
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© 2026 碳世界 · GHG 闯关实验室。科普用途，数值为示意性简化。</div>
+      <nav aria-label="页脚导航">
+        <a href="index.html">首页</a>
+        <a href="play.html">闯关</a>
+        <a href="about.html">关于</a>
+        <a href="privacy.html">隐私政策</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
