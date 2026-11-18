@@ -7,7 +7,7 @@ window.SITE_CONFIG = {
 
   /* Google AdSense 发布商 ID，格式：ca-pub-XXXXXXXXXXXXXXXX
      留空则全站不加载任何广告脚本（适合审核前准备）。 */
-  adsenseClient: "",
+  adsenseClient: "ca-pub-4783416498270097",
 
   /* 广告位 ID（在 AdSense 后台创建广告单元后复制）。
      页面用 data-ad-slot="leaderboard" / "inline" 引用。 */

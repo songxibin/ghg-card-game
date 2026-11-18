@@ -344,6 +344,7 @@ h1.page-title{font-size:clamp(30px,5vw,50px);line-height:1.08;letter-spacing:-1.
   font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:rgba(0,0,0,.12);
 }
 .ad-slot.has-ads{border:0;background:transparent;min-height:0}
+.ad-slot[data-ad-state="hidden"]{display:none}
 .toast{
   position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);
   background:#0f332a;border:1px solid rgba(61,220,151,.5);color:var(--text);

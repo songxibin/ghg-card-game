@@ -32,7 +32,12 @@
   slots.forEach(function (slot) {
     var slotId = (slot.dataset.adSlot || '').trim();
     var configured = (config.adsenseSlots || {})[slotId] || '';
-    if (!configured) return;
+    if (!configured) {
+      /* 已启用发布商脚本但该广告位还没有单元 ID：
+         隐藏占位框，避免线上出现“广告位”字样；自动广告仍可展示。 */
+      slot.dataset.adState = 'hidden';
+      return;
+    }
 
     var ins = document.createElement('ins');
     ins.className = 'adsbygoogle';

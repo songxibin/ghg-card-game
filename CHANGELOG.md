@@ -2,6 +2,14 @@
 
 > 用户要求：每次改动都在本地记录；同时每个阶段用 git commit 留痕。
 
+## 2026-11-18
+
+### 7. 开启 AdSense 广告
+- `assets/js/config.js` 填入发布商 ID `ca-pub-4783416498270097`，站点开始加载 AdSense 脚本。
+- `ads.txt` 替换为真实发布商 ID（`pub-4783416498270097`），供 Google 抓取核验。
+- 广告位缺少单元 ID 时隐藏占位框（`ads.js` + `.ad-slot[data-ad-state="hidden"]`），避免线上出现“广告位”字样；自动广告仍可展示。
+- `leaderboard` / `inline` 广告单元 ID 仍为空；如需固定广告位，在 AdSense 后台创建后填入并重新部署。
+
 ## 2026-11-11
 
 ### 6. 体验优化
