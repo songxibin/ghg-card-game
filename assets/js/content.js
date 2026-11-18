@@ -382,7 +382,7 @@ window.GHG_CONTENT = {
           ]
         },
         {
-          title: "2030 · 农业与土地",
+          title: "2031 · 农业与土地",
           hint: "甲烷和碳汇，都藏在这片土地里。",
           cards: [
             {
@@ -406,7 +406,7 @@ window.GHG_CONTENT = {
           ]
         },
         {
-          title: "2031 · 碳市场",
+          title: "2032 · 碳市场",
           hint: "给碳定价，还是继续补贴高碳？",
           cards: [
             {
@@ -430,7 +430,7 @@ window.GHG_CONTENT = {
           ]
         },
         {
-          title: "2032 · 公众生活",
+          title: "2034 · 公众生活",
           hint: "减排不只靠工程，也靠每个人的选择。",
           cards: [
             {
@@ -454,7 +454,7 @@ window.GHG_CONTENT = {
           ]
         },
         {
-          title: "2033 · 收官冲刺",
+          title: "2035 · 收官冲刺",
           hint: "最后两年，如何补齐缺口？",
           cards: [
             {

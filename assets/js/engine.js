@@ -12,10 +12,11 @@
   }
 
   const PROGRESS_KEY = 'ghg_progress_v1';
-  const YEAR_RANGE = {
-    l2: { start: 2027, end: 2029 },
-    l3: { start: 2027, end: 2030 },
-    l4: { start: 2026, end: 2035 }
+  // 每关各回合对应的年份；L4 跳过 2030/2033 两年，让 8 个回合覆盖 2026–2035 十年。
+  const YEAR_PLAN = {
+    l2: [2027, 2028, 2029],
+    l3: [2027, 2028, 2029, 2030],
+    l4: [2026, 2027, 2028, 2029, 2031, 2032, 2034, 2035]
   };
   const EQUIV = {
     treePerYearKg: 22,        // 一棵树每年吸收约 22 kg CO2
@@ -348,9 +349,9 @@
   }
 
   function yearOf(level, roundIndex) {
-    const range = YEAR_RANGE[level.id];
-    if (!range) return roundIndex + 1;
-    return Math.min(range.start + roundIndex, range.end);
+    const years = YEAR_PLAN[level.id];
+    if (!years) return roundIndex + 1;
+    return years[Math.min(roundIndex, years.length - 1)];
   }
 
   function renderHud(flash) {
@@ -452,7 +453,7 @@
     };
     const event = findEvent(level, sim.roundIndex + 1);
     const isLastRound = sim.roundIndex === level.rounds.length - 1;
-    const nextLabel = event ? '继续 →' : (isLastRound ? '查看十年成绩 →' : '进入下一阶段 →');
+    const nextLabel = event ? '继续 →' : (isLastRound ? '查看成绩 →' : '进入下一阶段 →');
 
     dom.feedback.innerHTML = `
       <div class="feedback">
@@ -528,7 +529,7 @@
     const pass = values.emissions <= target.emissions
       && values.budget >= (target.budget || 0)
       && values.support >= target.support;
-    const strong = values.emissions <= target.emissions * 0.8
+    const strong = values.emissions <= target.emissions * 0.9
       && values.support >= target.support + 5;
     const stars = pass ? (strong ? 3 : 2) : 0;
     const reduction = Math.max(0, level.start.emissions - values.emissions);
@@ -586,7 +587,10 @@
 
     const starsBlock = level.type === 'quiz' || stars > 0
       ? `<div class="result-stars">${starsHtml(stars)}</div>` : '';
-    const metricHtml = metrics.map((metric) => `
+    const allMetrics = metrics.some((metric) => metric.label === '碳积分')
+      ? metrics
+      : [...metrics, { label: '碳积分', value: score }];
+    const metricHtml = allMetrics.map((metric) => `
       <div class="metric"><div class="l">${escapeHtml(metric.label)}</div><div class="v">${escapeHtml(metric.value)}</div></div>`).join('');
     const equivHtml = equivalents && equivalents.length
       ? `<div class="equiv"><h3>这个减排量大约等于</h3><div class="equiv-grid">
@@ -610,7 +614,6 @@
         <div class="grade">${escapeHtml(title)}</div>
         <p class="grade-sub">${escapeHtml(subtitle)}</p>
         <div class="result-metrics">${metricHtml}
-          <div class="metric"><div class="l">碳积分</div><div class="v">${score}</div></div>
         </div>
         ${equivHtml}
         <div class="result-actions">

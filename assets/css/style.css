@@ -74,6 +74,14 @@ button{font:inherit;color:inherit}
   padding:9px 16px!important;border-radius:10px!important;font-weight:800!important;
 }
 .page{padding:44px 0 72px}
+
+/* ---------- screens (single-page game) ---------- */
+.screen{display:none}
+.screen.active{display:block;animation:screen-in .26s ease both}
+@keyframes screen-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .screen.active{animation:none}
+}
 .section-head{max-width:720px;margin-bottom:28px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
@@ -374,7 +382,6 @@ h1.page-title{font-size:clamp(30px,5vw,50px);line-height:1.08;letter-spacing:-1.
   .brand{font-size:16px}
   .brand-mark{width:28px;height:28px}
   .nav-links a{padding:7px 8px;font-size:13px}
-  .nav-links a:not(.nav-cta):not(.keep){display:none}
   .page{padding:30px 0 54px}
   .hero{border-radius:22px}
   .panel{padding:20px}
